@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12" style="background-color: #FFDE00; text-align: center; font-size: 20px;">
-                <h3 style="margin-top: 10px; padding: 0px 0;color:">Descubra aqui seu hobbie</h3>
+                <h3 style="margin-top: 10px; padding: 0px 0;">Descubra aqui seu hobbie</h3>
             </div>
         </div>
     </div>
@@ -30,11 +30,16 @@
         </div>
 
         <div class="row">
-            <div class="col-9" style="margin-top: 10px;;">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="col-1" style="margin-top: 10px;">
+                <div class="menu-toggle" id="toggle-button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
+
+            <div class="col-8"></div>
+
             <div class="col-1" style="margin-top: 30px;">
                 <p>Login/cadastrar</p>
             </div>
@@ -42,8 +47,16 @@
         </div>
 
         <div class="row">
+            <div class="col-2">
+                <div class="menu" id="menu">
+                    <ul>
+                        <li><a href="#">Configurações</a></li>
+                        <li><a href="#">Novidades</a></li>
+                        <li><a href="#">Quem somos</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="col-6"></div>
-            <div class="col-2"></div>
             <div class="col-4">
                 <form action="/search" method="get">
                     <img src="../Imagens/64673.png" alt="Ícone de pesquisa" style="width: 6%;">
@@ -60,15 +73,17 @@
                     alt="Ícone do Headset"></div>
             <div class="col-4"></div>
         </div>
-        
+
     </div>
 
     <div class="container-fluid" style="background-color:#BD09B6; height: 10vh;">
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-3"><button type="button" class="btn btn-primary btn-lg" style="background-color: #FFDE00; color: #000;"> &nbsp; Criar um grupo &nbsp; </button></div>
+            <div class="col-3"><button type="button" class="btn btn-primary btn-lg"
+                    style="background-color: #FFDE00; color: #000;"> &nbsp; Criar um grupo &nbsp; </button></div>
             <div class="col-2"></div>
-            <div class="col-3"><button type="button" class="btn btn-primary btn-lg" style="background-color: #FFDE00; color: #000;">Entar em um grupo</button></div>
+            <div class="col-3"><button type="button" class="btn btn-primary btn-lg"
+                    style="background-color: #FFDE00; color: #000;">Entar em um grupo</button></div>
         </div>
     </div>
 
@@ -77,7 +92,8 @@
         <div class="row">
             <div class="col-4"></div>
             <div class="col-6">
-                <p style="font-size: 20px; height: 2vh;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Segue a gente nas redes sociais</p>
+                <p style="font-size: 20px; height: 2vh;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Segue a gente nas redes
+                    sociais</p>
             </div>
             <div class="col-1"></div>
         </div>
@@ -91,6 +107,9 @@
         </div>
     </div>
 
+
+
+    <script src="C:\Users\Otavio\Documents\Repositorios\HobbiesHub\JavaScript\index.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
