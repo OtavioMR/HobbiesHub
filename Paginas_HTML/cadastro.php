@@ -1,3 +1,29 @@
+<?php
+
+if(isset($_POST['submit']))
+{
+  // print_r($_POST['nome']);
+  // print_r('<br>');
+  // print_r($_POST['email']);
+  // print_r('<br>');
+  // print_r($_POST['usuario']);
+  // print_r('<br>');
+  // print_r($_POST['senha']);
+
+  include_once('config.php');
+
+  $nome = $_POST['nome'];
+  $email = $_POST['email'];
+  $usuario = $_POST['usuario'];
+  $senha = $_POST['senha'];
+
+  $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,usuario,senha) VALUES ('$nome','$email','$usuario','$senha')");
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -87,7 +113,7 @@
 
     #FundoAmareloLogin {
       width: 450px;
-      height: 200px;
+      height: 280px;
       background-color: yellow;
       position: absolute;
       border-radius: 5%;
@@ -136,22 +162,6 @@
       /* Aumenta o tamanho em 10% quando o mouse está sobre o input */
 
     }
-
-    #fundo_branco1 {
-      margin-top: 28%;
-      margin-left: 15px;
-      width: 50;
-    }
-
-    #fundo_branco2 {
-      width: 50;
-      margin-left: 15px;
-    }
-
-    #fundo_branco3 {
-      margin-left: 15px;
-      width: 50;
-    }
   </style>
 
 
@@ -171,7 +181,7 @@
       </div>
     </div>
 
-    <div class="container-fluid" style="background-color: #BD09B6; height: 105vh;">
+    <div class="container-fluid" style="background-color: #BD09B6; height: 95vh;">
       <div class="row">
         <div class="col-12"
           style="font-family: 'Shrikhand', cursive; text-align: center; font-size: 60px; padding: 0%;">
@@ -207,10 +217,30 @@
 
           <div class="row" id="login">
             <div class="col-1"></div>
-            <div class="col-2">Usuário:</div>
+            <div class="col-2">Nome:</div>
             <div class="col-8"><input type="text" class="cadastro_dados_usuario" name="nome"></div>
             <div class="col-1"></div>
           </div>
+
+
+
+          <div class="row" id="login">
+            <div class="col-1"></div>
+            <div class="col-2">Email:</div>
+            <div class="col-8"><input type="email" class="cadastro_dados_usuario" name="email"></div>
+            <div class="col-1"></div>
+          </div>
+
+
+
+          <div class="row" id="login">
+            <div class="col-1"></div>
+            <div class="col-2">Usuário:</div>
+            <div class="col-8"><input type="text" class="cadastro_dados_usuario" name="usuario"></div>
+            <div class="col-1"></div>
+          </div>
+
+
 
 
           <div class="row" id="login">
@@ -220,10 +250,12 @@
             <div class="col-1"></div>
           </div>
 
-          <div class="row">
-            <div class="col-12"><a href="index.html"><button type="button" class="btn btn-primary btn-lg"
-                  style="background-color: white; color: #000; margin-top: 8%; margin-left: 180px;">Entrar</button></a>
-            </div>
+
+          <div class="row" id="login">
+            <div class="col-1"></div>
+            <div class="col-3">Confirmar:</div>
+            <div class="col-7"><input type="text" class="cadastro_dados_usuario"></div>
+            <div class="col-1"></div>
           </div>
 
         </div>
@@ -231,56 +263,23 @@
       </div>
 
 
-      <div class="row">
-        <div class="col-5"></div>
-        <div class="col-6" id="fundo_branco1"><button type="button" class="btn btn-primary"
-            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 15px; background-color: white; color: black;">&nbsp;&nbsp;
-            Continuar com Google &nbsp;&nbsp;</button></div>
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="col-5"></div>
-        <div class="col-4" id="fundo_branco2">
-          <button type="button" class="btn btn-primary"
-            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 15px; background-color: white; color: black;">&nbsp;
-            Contiuar com Facebook &nbsp;</button>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="row">
-        <div class="col-5"></div>
-        <div class="col-4" id="fundo_branco3">
-          <a href="cadastro.php">
-            <button type="button" class="btn btn-primary"
-              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: 15px; background-color: white; color: black;">&nbsp;
-              &nbsp; &nbsp; &nbsp; &nbsp; Primeiro acesso &nbsp; &nbsp; &nbsp; &nbsp; </button>
-          </a>
-        </div>
-      </div>
-
-
-      <!-- <div class="row" style="margin-top: 30%;">
+      <div class="row" style="margin-top: 30%;">
         <div class="col-4"></div>
         <div class="col-2"><a href="index.html"><button type="button" class="btn btn-primary btn-lg"
           style="background-color: #FFDE00; color: #000;"> &nbsp; voltar &nbsp; </button></a></div>
         <div class="col-3"><button type="submit" class="btn btn-primary btn-lg" name="submit"
             style="background-color: #FFDE00; color: #000; margin-left: 28%;"> &nbsp; Enviar &nbsp; </button></div>
- -->
 
 
-      <div class="row" style="padding-top: 20px;">
-        <div class="col-5"></div>
-        <div class="col-4">
-          <a href="login.html"
-            style="font-size: 20px; text-decoration: underline; margin-left: 30px; color: black">Esqueceu a senha</a>
+
+        <div class="row" style = "padding-top: 20px;">
+          <div class="col-5"></div>
+          <div class="col-4">
+            <a href="login.html" style="font-size: 20px; text-decoration: underline; margin-left: 30px; color: black">Possuo cadastro</a>
+          </div>
         </div>
-      </div>
 
-    </div>
+      </div>
 
     </div>
 
